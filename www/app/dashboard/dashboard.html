@@ -1,0 +1,23 @@
+<ion-nav-bar class="bar-assertive-900" align-title="left">
+
+  <ion-nav-back-button class="no-text">
+  </ion-nav-back-button>
+
+  <ion-nav-buttons side="left">
+    <button class = "button button-icon button-clear ion-android-more-vertical" ng-click="openPopover($event)"></button>
+  </ion-nav-buttons>
+</ion-nav-bar>
+<ion-nav-view name="menuContent"></ion-nav-view>
+
+<ion-tabs class="tabs-icon-top tabs-dark">
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="Dashboard" icon-off="icon ion-ios-contact-outline" icon-on="icon ion-ios-contact-outline">
+    <ion-nav-view name="dashboard-tab"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Busqueda Tab -->
+  <ion-tab title="Busqueda" icon-off="ion-ios-search" icon-on="ion-ios-search-strong" ui-sref="app.universidades">
+    <ion-nav-view name="contenido"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>

@@ -1,0 +1,30 @@
+<ion-popover-view>
+  <ion-content>
+    <ion-list>
+      <ion-item nav-clear menu-close>
+        <a ui-sref="app.dashboard" class="item item-icon-left" ng-click="popover.hide()">
+          <i class="icon ion-ios-person-outline"></i>
+          Profile
+        </a>
+      </ion-item>
+
+
+      <ion-item nav-clear>
+        <a ui-sref="app.universidades" ng-click="popover.hide()" class="item item-icon-left">
+          <i class="icon ion-ios-home"></i>
+          Universidades
+        </a>
+      </ion-item>
+
+      <ion-item nav-clear>
+        <a ui-sref="login" ng-click="logout()" class="item item-icon-left">
+          <i class="icon ion-log-out"></i>
+          Logout
+        </a>
+      </ion-item>
+
+
+
+    </ion-list>
+  </ion-content>
+</ion-popover-view>
