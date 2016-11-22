@@ -1,23 +1,32 @@
-<ion-nav-bar class="bar-assertive-900" align-title="left">
+<ion-view view-title="Tablero">
+  <ion-content class="Espejo">
+    <div class="hero" ng-style="dash.estiloFondo">
+      <div class="content">
+        <div class="avatar" ng-style="dash.estilo">
 
-  <ion-nav-back-button class="no-text">
-  </ion-nav-back-button>
+        </div>
+        <h3 class="light">{{dash.user.nombre}} {{dash.user.apellidos}}</h3>
+        <h4>@{{dash.user.nombre}}</h4>
+      </div>
+    </div>
 
-  <ion-nav-buttons side="left">
-    <button class = "button button-icon button-clear ion-android-more-vertical" ng-click="openPopover($event)"></button>
-  </ion-nav-buttons>
-</ion-nav-bar>
-<ion-nav-view name="menuContent"></ion-nav-view>
 
-<ion-tabs class="tabs-icon-top tabs-dark">
+    <div class="content padding">
+      <div class="list condensed-space no-padding">
+        <div class="card" >
+          <a class="item clear-bg item-bg-image" ui-sref="app.mispublicaciones">
+            <h2>Mis reservas</h2>
+            <p>{{dash.user.nombre}}</p>
+            <img ng-src="{{materia.foto}}">
+          </a>
+        </div>
+      </div>
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Dashboard" icon-off="icon ion-ios-contact-outline" icon-on="icon ion-ios-contact-outline">
-    <ion-nav-view name="dashboard-tab"></ion-nav-view>
-  </ion-tab>
+    </div>
 
-  <!-- Busqueda Tab -->
-  <ion-tab title="Busqueda" icon-off="ion-ios-search" icon-on="ion-ios-search-strong" ui-sref="app.universidades">
-    <ion-nav-view name="contenido"></ion-nav-view>
-  </ion-tab>
-</ion-tabs>
+
+
+  </ion-content>
+
+  <button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900" ng-click="dash.show()" style="bottom: 10% !important;"><i class="icon ion-plus"></i></button>
+</ion-view>

@@ -3,16 +3,16 @@
     .module('aerolinea')
     .controller('MenuCtrl', MenuCtrl);
 
-  MenuCtrl.$inject = ['$scope','UserService', '$ionicPopover', '$ionicHistory'];
+  MenuCtrl.$inject = ['$scope','AuthService', '$ionicPopover', '$ionicHistory'];
 
-  function MenuCtrl($scope, UserService, $ionicPopover, $ionicHistory) {
+  function MenuCtrl($scope, AuthService, $ionicPopover, $ionicHistory) {
 
 
     $scope.logout = function () {
       console.log("logout");
       $scope.popover.hide();
       $ionicHistory.clearCache();
-      UserService.logOut();
+      AuthService.logOut();
     };
 
     $ionicPopover.fromTemplateUrl('app/menu/sideMenu.html',{

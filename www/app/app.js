@@ -75,7 +75,7 @@
       .state('app',{
         url: '/app',
         abstract: true,
-        templateUrl: 'app/dashboard/dashboard.html',
+        templateUrl: 'app/dashboard/dashboardTabs.html',
         controller: 'MenuCtrl'
       });
     /* ver otras rutas en la carpeta app/tablero */

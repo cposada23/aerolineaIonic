@@ -1,9 +1,9 @@
 (function(){
   angular.module('aerolinea').controller('LoginCtrl', LoginCtrl);
 
-  LoginCtrl.$inject = ['AuthService', '$ionicLoading', '$rootScope'];
+  LoginCtrl.$inject = ['AuthService', '$ionicLoading', '$rootScope', '$state'];
 
-  function LoginCtrl(AuthService, $ionicLoading, $rootScope) {
+  function LoginCtrl(AuthService, $ionicLoading, $rootScope, $state) {
     var vm = this;
 
     vm.user = {};
@@ -18,7 +18,7 @@
     $rootScope.$on('userLoggedIn', function () {
       $ionicLoading.hide();
       console.log("usuario se loggeo ");
-      //$state.go('app.dashboard');
+      $state.go('app.dashboard');
     });
 
     $rootScope.$on('userFailedLogin', function () {

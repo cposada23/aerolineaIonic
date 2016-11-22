@@ -1,9 +1,9 @@
 (function(){
   angular.module('aerolinea').controller('RegistroCtrl', RegistroCtrl);
 
-  RegistroCtrl.$inject = ['AuthService' , '$ionicLoading', '$rootScope'];
+  RegistroCtrl.$inject = ['AuthService' , '$ionicLoading', '$rootScope', '$state'];
 
-  function RegistroCtrl(AuthService, $ionicLoading, $rootScope) {
+  function RegistroCtrl(AuthService, $ionicLoading, $rootScope, $state) {
     var vm = this;
 
 
@@ -25,7 +25,7 @@
     $rootScope.$on('userSingUp', function () {
       $ionicLoading.hide();
       console.log("usuario se registro correctamente ");
-      //$state.go('app.dashboard');
+      $state.go('app.dashboard');
     });
 
     $rootScope.$on('failedSingup', function () {
