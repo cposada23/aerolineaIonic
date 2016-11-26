@@ -78,7 +78,7 @@
         templateUrl: 'app/dashboard/dashboardTabs.html',
         controller: 'MenuCtrl'
       });
-    /* ver otras rutas en la carpeta app/tablero */
+    /* ver otras rutas en la carpeta app/dashboard */
 
 
     $urlRouterProvider.otherwise('/login');
