@@ -1,4 +1,4 @@
-<ion-view view-title="Tablero">
+<ion-view view-title="Paso 1">
   <ion-content class="Espejo">
     <div class="list">
       <label class="item item-input item-select item-assertive">
@@ -16,19 +16,61 @@
         <select ng-model="reserva.ciudadDestino" ng-options= "ciudad as ciudad.nombre for ciudad in reserva.ciudades">
         </select>
       </label>
+
+      <label class="item item-input item-select item-dark">
+        <div class="input-label">
+          Tipo
+        </div>
+        <select ng-model="reserva.tipo" ng-options= "tipo as tipo.tipo for tipo in reserva.tipos">
+        </select>
+      </label>
       <button class="button button-full button-assertive ink" ng-click="reserva.buscarVuelos()">Buscar vuelos</button>
     </div>
 
-    <div class="list card" style="background-color: #9e3333  !important;" ng-repeat = "vuelo in reserva.vuelos">
-      <a class = "item item-avatar clear-bg" ng-click="irVuelo()">
-        <img ng-src ="img/11.jpg">
-        <h3><strong>fecha </strong> {{vuelo.fecha | date}}</h3>
-        <h2><strong>Destino:  </strong></h2>
-        <h3><strong>Ciudad </strong> {{reserva.ciudadDestino.nombre}}</h3>
-        <h3><strong>Aeropuerto </strong>{{vuelo.aeropuertoDestino.nombre}}</h3>
-        <h3><strong>Precio </strong> {{vuelo.precioBase | currency}}</h3>
-      </a>
+    <div ng-show = "reserva.mostrar && reserva.mostrarVuelosIda">
+      <div class="list">
+        <label class="item item-input item-select item-dark">
+          Seleccione el vuelo de ida
+        </label>
+
+      </div>
+
+      <div class="list card" style="background-color: #9e3333  !important;" ng-repeat = "vuelo in reserva.vuelosIda">
+        <a class = "item item-avatar clear-bg" ng-click="reserva.seleccionVueloIda(vuelo)">
+          <img ng-src ="img/11.jpg">
+          <h3><strong>fecha </strong> {{vuelo.fecha | date}}</h3>
+          <h2><strong>Destino:  </strong></h2>
+          <h3><strong>Ciudad </strong> {{reserva.ciudadDestino.nombre}}</h3>
+          <h3><strong>Aeropuerto </strong>{{vuelo.aeropuertoDestino.nombre}}</h3>
+          <h3><strong>Precio </strong> {{vuelo.precioBase | currency}}</h3>
+          <h3><strong>Asientos Diponibles </strong> {{vuelo.asientos}}</h3>
+        </a>
+      </div>
     </div>
 
+    <div ng-show = "reserva.mostrarVuelosRegreso && reserva.mostrar">
+      <div class="list">
+        <label class="item item-input item-select item-dark">
+          Seleccione el vuelo de Regreso
+        </label>
+
+      </div>
+
+      <div class="list card" style="background-color: #9e3333  !important;" ng-repeat = "vuelo in reserva.vuelosRegreso">
+        <a class = "item item-avatar clear-bg" ng-click="reserva.seleccionVueloRegreso(vuelo)">
+          <img ng-src ="img/11.jpg">
+          <h3><strong>fecha </strong> {{vuelo.fecha | date}}</h3>
+          <h2><strong>Destino:  </strong></h2>
+          <h3><strong>Ciudad </strong> {{reserva.ciudadOrigen.nombre}}</h3>
+          <h3><strong>Aeropuerto </strong>{{vuelo.aeropuertoDestino.nombre}}</h3>
+          <h3><strong>Precio </strong> {{vuelo.precioBase | currency}}</h3>
+          <h3><strong>Asientos Diponibles </strong> {{vuelo.asientos}}</h3>
+        </a>
+      </div>
+    </div>
+
+
+
   </ion-content>
+
 </ion-view>

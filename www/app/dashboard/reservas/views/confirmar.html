@@ -1,0 +1,35 @@
+<ion-view view-title="Confirmar">
+  <ion-content class="Espejo">
+    <div class="list">
+      <label class="item item-input  item-dark">
+        Confirmar  reserva
+      </label>
+    </div>
+    <div class="list card" style="background-color: #9e4334  !important;">
+      <a class = "item  clear-bg">
+        <h2><strong>Vuelo ida</strong> </h2>
+        <h3><strong>fecha </strong> {{confirmar.reserva.vueloIda.fecha | date}}</h3>
+        <h2><strong>Destino:  </strong></h2>
+        <h3><strong>Ciudad </strong> {{confirmar.reserva.vueloIda.ciudadDestino.nombre}}</h3>
+        <h3><strong>Aeropuerto </strong>{{confirmar.reserva.vueloIda.aeropuertoDestino.nombre}}</h3>
+        <h3><strong>Precio </strong> {{confirmar.reserva.vueloIda.precioBase | currency}}</h3>
+        <div ng-show="confirmar.reserva.tipo.id == 2">
+          <h2><strong>Vuelo Regreso</strong> </h2>
+          <h3><strong>fecha </strong> {{confirmar.reserva.vueloRegreso.fecha | date}}</h3>
+          <h2><strong>Destino:  </strong></h2>
+          <h3><strong>Ciudad </strong> {{confirmar.reserva.vueloRegreso.ciudadDestino.nombre}}</h3>
+          <h3><strong>Aeropuerto </strong>{{confirmar.reserva.vueloRegreso.aeropuertoDestino.nombre}}</h3>
+          <h3><strong>Precio </strong> {{confirmar.reserva.vueloRegreso.precioBase | currency}}</h3>
+        </div>
+
+        <h1><strong>Costo Total </strong></h1>
+        <h3><strong>Numero de tiquetes </strong> {{confirmar.reserva.numeroTiquetes}}</h3>
+        <h2 ng-show="confirmar.reserva.tipo.id == 1"><strong>Precio </strong> {{confirmar.reserva.vueloIda.precioBase * confirmar.reserva.numeroTiquetes | currency}}</h1>
+        <h2 ng-show="confirmar.reserva.tipo.id==2"><strong>Precio </strong>{{(confirmar.reserva.vueloIda.precioBase + confirmar.reserva.vueloRegreso.precioBase) * confirmar.reserva.numeroTiquetes | currency}}</h1>
+
+      </a>
+    </div>
+    <button class="button button-full button-assertive ink" ng-click="reserva.confirmar()">Confirmar</button>
+  </ion-content>
+
+</ion-view>
