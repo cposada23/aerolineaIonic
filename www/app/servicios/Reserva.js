@@ -12,6 +12,9 @@
       getVuelos: function (ciudadOrigen, ciudadDestino) {
         return $http.get(server.servidor + '/usuario/vuelo/vuelosOrigenDestino/' + ciudadOrigen + '/' + ciudadDestino);
       },
+      generarReserva: function (reserva) {
+        return $http.post(server.servidor + '/usuario/reserva', {reserva:reserva});
+      },
       getReserva: function () {
         console.log("retornando reserva");
         return reserva;

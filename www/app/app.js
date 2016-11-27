@@ -50,10 +50,10 @@
     //commonConfig.redirectUri = 'http://localhost:8100/';
     $authProvider.loginUrl = server.servidor + '/auth/login';
     $authProvider.signupUrl = server.servidor + '/auth/signup';
-    $authProvider.httpInterceptor = false;
+    //$authProvider.httpInterceptor = false;
     $authProvider.tokenHeader = 'Authorization';
     $authProvider.tokenName = 'token';
-    $authProvider.withCredentials = false;
+    //$authProvider.withCredentials = false;
 
     $stateProvider
 
