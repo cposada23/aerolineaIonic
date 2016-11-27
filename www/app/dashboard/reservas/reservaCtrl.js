@@ -1,9 +1,9 @@
 (function () {
   angular.module('aerolinea').controller('reservaCtrl' ,reservaCtrl );
 
-  reservaCtrl.$inject = ['Reserva' ,'$state'];
+  reservaCtrl.$inject = ['Reserva' ,'$state', '$scope'];
 
-  function reservaCtrl(Reserva, $state) {
+  function reservaCtrl(Reserva, $state,$scope) {
 
 
     var vm = this;
@@ -27,6 +27,7 @@
     ];
     vm.tipo;
 
+
     vm.getCiudades = function () {
       Reserva.getCiudades().then(function success(response) {
         console.log("Ciudades " +JSON.stringify(response));
@@ -37,6 +38,20 @@
     }
 
     vm.getCiudades();
+    $scope.$on('$ionicView.enter', function () {
+      console.log("entrarnrnrnrnrn");
+      vm.ciudades = [];
+      vm.vuelosIda = [];
+      vm.vuelosRegreso = [];
+      vm.reserva = {};
+      vm.ciudadOrigen;
+      vm.ciudadDestino;
+      vm.mostrar = false;
+      vm.mostrarVuelosIda = false;
+      vm.mostrarVuelosRegreso = false;
+      vm.getCiudades();
+      Reserva.setReserva({});
+    });
 
     vm.buscarVuelos = function () {
       if(vm.ciudadOrigen && vm.ciudadDestino && vm.tipo){

@@ -1,0 +1,23 @@
+<ion-view view-title="Lista de tiquetes">
+  <ion-content class="Espejo">
+    <div class="list">
+      <label class="item item-input  item-dark">
+        Mis Tiquetes
+      </label>
+    </div>
+
+    <div class="content padding">
+      <div class="list condensed-space no-padding">
+        <div class="card" ng-repeat = "tiquete in misTiquetes.tiquetes">
+          <a class="item clear-bg item-bg-image">
+
+          </a>
+          <button type="button" name="button" class="button button-full button-assertive ink">Pagar Tiquete</button>
+        </div>
+      </div>
+
+    </div>
+
+    <button type="button" name="button" class="button button-full button-assertive ink">Pagar todos los tiquetes</button>
+  </ion-content>
+</ion-view>

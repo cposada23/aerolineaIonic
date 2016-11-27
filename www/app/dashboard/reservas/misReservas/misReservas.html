@@ -1,5 +1,25 @@
-<ion-view view-title="Tablero">
+<ion-view view-title="Lista de reservas">
   <ion-content class="Espejo">
-    <h1>Hola mis reservas</h1>
+    <div class="list">
+      <label class="item item-input  item-dark">
+        Mis reservas
+      </label>
+    </div>
+
+    <div class="content padding">
+      <div class="list condensed-space no-padding">
+        <div class="card" ng-repeat = "compra in misReservas.misCompras">
+          <a class="item clear-bg item-bg-image" ng-click="misReservas.verTiquetes(compra)">
+            <h3>{{compra.descripcion}}</h3>
+            <h3><strong>Estado: </strong> <div ng-show="compra.estado"> pagada</div> <div ng-show="!compra.estado"> reserva, a espera de pago</div> </h3>
+            <h3><strong>Fecha reserva </strong> {{compra.fecha | date}} </h3>
+            <h3><strong>Valor total: </strong> {{compra.valorTotal | currency}} </h3>
+            <h3><strong>Numero Tiquetes: </strong> {{compra.numeroTiquetes}}</h3>
+          </a>
+          <button type="button" name="button" class="button button-full button-assertive ink" ng-click="misReservas.verQR()">Ver qr</button>
+        </div>
+      </div>
+
+    </div>
   </ion-content>
 </ion-view>

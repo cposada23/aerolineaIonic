@@ -77,6 +77,12 @@
         abstract: true,
         templateUrl: 'app/dashboard/dashboardTabs.html',
         controller: 'MenuCtrl'
+      })
+
+      .state('tiquetes', {
+        url: '/tiquetes',
+        templateUrl:'app/dashboard/reservas/misReservas/misTiquetes.html',
+        controller: 'misTiquetesCrtl as misTiquetes'
       });
     /* ver otras rutas en la carpeta app/dashboard */
 

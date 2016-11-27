@@ -52,6 +52,15 @@
               controller: 'misReservasCtrl as misReservas'
           }
         }
+      })
+      .state('app.misTiquetes', {
+        url:'/misTiquetes',
+        views:{
+          'dashboard-tab':{
+              templateUrl:'app/dashboard/reservas/misReservas/misTiquetes.html',
+              controller: 'misTiquetesCrtl as misTiquetes'
+          }
+        }
       });
   }
 }());
