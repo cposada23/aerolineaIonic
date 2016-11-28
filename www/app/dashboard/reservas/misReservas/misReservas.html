@@ -16,7 +16,7 @@
             <h3><strong>Valor total: </strong> {{compra.valorTotal | currency}} </h3>
             <h3><strong>Numero Tiquetes: </strong> {{compra.numeroTiquetes}}</h3>
           </a>
-          <button type="button" name="button" class="button button-full button-assertive ink" ng-click="misReservas.verQR()">Ver qr</button>
+          <button type="button" name="button" class="button button-full button-assertive ink" ng-click="misReservas.verQR(compra.qr)">Ver qr</button>
         </div>
       </div>
 

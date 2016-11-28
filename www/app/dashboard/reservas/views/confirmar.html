@@ -23,7 +23,10 @@
         </div>
 
         <h1><strong>Costo Total </strong></h1>
-        <h3><strong>Numero de tiquetes </strong> {{confirmar.reserva.numeroTiquetes}}</h3>
+        <h3><strong>Numero de tiquetes </strong> </h3>
+        <h2 ng-show="confirmar.reserva.tipo.id == 1"><strong>Numero de tiquetes </strong> {{confirmar.reserva.numeroTiquetes}}</h1>
+        <h2 ng-show="confirmar.reserva.tipo.id == 2"><strong>Ida </strong> {{confirmar.reserva.numeroTiquetes}}</h1>
+        <h2 ng-show="confirmar.reserva.tipo.id == 2"><strong>Regreso </strong> {{confirmar.reserva.numeroTiquetes}}</h1>    
         <h2 ng-show="confirmar.reserva.tipo.id == 1"><strong>Precio </strong> {{confirmar.reserva.vueloIda.precioBase * confirmar.reserva.numeroTiquetes | currency}}</h1>
         <h2 ng-show="confirmar.reserva.tipo.id==2"><strong>Precio </strong>{{(confirmar.reserva.vueloIda.precioBase + confirmar.reserva.vueloRegreso.precioBase) * confirmar.reserva.numeroTiquetes | currency}}</h1>
 

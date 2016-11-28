@@ -1,0 +1,29 @@
+<ion-view view-title="Pago">
+  <ion-content class="Espejo">
+    <div class="list">
+      <label class="item item-input  item-dark">
+        Pago tiquete
+      </label>
+    </div>
+    <div class="list">
+      <form>
+
+        <label class="item item-input">
+          <span>Numero tarjeta: </span>
+          <input type="text" required/>
+        </label>
+        <label class="item item-input">
+          <span>Fecha Caducidad: </span>
+          <input type="text" required/>
+        </label>
+        <label class="item item-input">
+          <span>costo: </span>
+          {{pago.tiquete.precio | currency}}
+        </label>
+        <button class="button button-full button-assertive ink" ng-click="pago.pagar()">Confirmar</button>
+      </form>
+    </div>
+
+  </ion-content>
+
+</ion-view>

@@ -9,10 +9,35 @@
     <div class="content padding">
       <div class="list condensed-space no-padding">
         <div class="card" ng-repeat = "tiquete in misTiquetes.tiquetes">
-          <a class="item clear-bg item-bg-image">
 
-          </a>
-          <button type="button" name="button" class="button button-full button-assertive ink">Pagar Tiquete</button>
+          <div class="" ng-show="tiquete.tipo == 1">
+            <a class="item clear-bg item-bg-image">
+              <h3>Vuelo de ida</h3>
+              <h3><strong>Estado: </strong> <div ng-show="tiquete.estado"> pagado</div> <div ng-show="!tiquete.estado"> reserva</div> </h3>
+              <h3><strong>Fecha de salida: </strong> {{tiquete.vueloIda.fecha | date}} </h3>
+              <h3><strong>Aeropuerto origen: </strong> {{tiquete.vueloIda.aeropuertoOrigen.nombre}}</h3>
+              <h3><strong>Aeropuerto destino: </strong>{{tiquete.vueloIda.aeropuertoDestino.nombre}}</h3>
+              <h3><strong>Precio: </strong>{{tiquete.precio}}</h3>
+            </a>
+          </div>
+
+          <div class="" ng-show="tiquete.tipo == 2">
+            <a class="item clear-bg item-bg-image">
+              <h3>Vuelo de regreso</h3>
+              <h3><strong>Estado: </strong> <div ng-show="tiquete.estado"> pagado</div> <div ng-show="!tiquete.estado"> reserva</div> </h3>
+              <h3><strong>Fecha de salida: </strong> {{tiquete.vueloRegreso.fecha | date}} </h3>
+              <h3><strong>Aeropuerto origen: </strong> {{tiquete.vueloRegreso.aeropuertoOrigen.nombre}}</h3>
+              <h3><strong>Aeropuerto destino: </strong>{{tiquete.vueloRegreso.aeropuertoDestino.nombre}}</h3>
+              <h3><strong>Precio: </strong>{{tiquete.precio}}</h3>
+
+            </a>
+          </div>
+
+          <button type="button" name="button" class="button button-full button-assertive ink" ng-click="misTiquetes.verQR(tiquete.qr)">Ver qr</button>
+          <button type="button" name="button" class="button button-full button-assertive ink" ng-show="!tiquete.estado" ng-click="misTiquetes.pagarTiquete(tiquete)">Pagar Tiquete</button>
+          <h3 style="color: red;"  ng-show="tiquete.estado"><strong>Pagado </strong></h3>
+
+
         </div>
       </div>
 

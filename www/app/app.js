@@ -79,10 +79,10 @@
         controller: 'MenuCtrl'
       })
 
-      .state('tiquetes', {
-        url: '/tiquetes',
-        templateUrl:'app/dashboard/reservas/misReservas/misTiquetes.html',
-        controller: 'misTiquetesCrtl as misTiquetes'
+      .state('pagoTiquete', {
+        url: '/pagoTiquete',
+        templateUrl:'app/pago/pagoTiquete.html',
+        controller: 'pagoTiqueteCtrl as pago'
       });
     /* ver otras rutas en la carpeta app/dashboard */
 

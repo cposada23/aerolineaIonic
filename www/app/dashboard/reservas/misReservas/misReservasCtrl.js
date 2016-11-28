@@ -23,20 +23,32 @@
     });
 
 
-    vm.verQR = function () {
-      $ionicPopup.alert({
-        title:'ver qr',
-        content: 'ver qr'
-      }).then(function (res) {
-      });
+
+
+    vm.verQR = function (ruta) {
+      $scope.ruta = ruta;
+      $ionicPopup.show({
+          template: '<img ng-src="{{ruta}}">',
+          title: 'QR',
+          scope: $scope,
+          buttons: [
+            {
+              text: '<b>OK</b>',
+              type: 'button-positive',
+              onTap: function(e) {
+                return e;
+              }
+            }
+          ]
+        });
     }
 
 
     vm.verTiquetes = function (compra) {
       Compra.setCompra(compra);
       $ionicPopup.alert({
-        title:'ver informacion de tiquete',
-        content: 'ver qr'
+        title:'ver informacion de reserva?',
+        content: ''
       }).then(function (res) {
         $state.go('app.misTiquetes');
       });
